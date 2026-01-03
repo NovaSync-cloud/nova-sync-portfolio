@@ -14,7 +14,7 @@ const socialLinks = [
   { 
     icon: MessageCircle, 
     label: "WhatsApp", 
-    href: "https://wa.me/message/62PWVK7X73BMD1",
+    href: "https://wa.me/2348027151618",
     color: "hover:bg-green-500/20 hover:border-green-500/50"
   },
   { 
@@ -94,7 +94,7 @@ const ContactSection = () => {
           
           {/* Primary CTA */}
           <motion.a
-            href="https://wa.me/message/62PWVK7X73BMD1"
+            href="https://wa.me/2348027151618"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.02 }}

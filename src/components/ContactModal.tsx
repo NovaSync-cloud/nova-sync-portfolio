@@ -11,7 +11,7 @@ const contactOptions = [
     icon: MessageCircle,
     label: "WhatsApp",
     description: "Quick response, let's chat!",
-    href: "https://wa.me/message/62PWVK7X73BMD1",
+    href: "https://wa.me/2348027151618",
     color: "bg-green-500/20 border-green-500/50 hover:bg-green-500/30",
     iconColor: "text-green-500",
   },

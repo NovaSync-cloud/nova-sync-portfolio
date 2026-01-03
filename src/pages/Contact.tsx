@@ -13,7 +13,7 @@ const contactMethods = [
     title: "WhatsApp",
     description: "Chat with me directly for quick responses",
     action: "Start Chat",
-    url: "https://wa.me/message/62PWVK7X73BMD1",
+    url: "https://wa.me/2348027151618",
     color: "from-green-500 to-green-600",
   },
   {
@@ -273,7 +273,7 @@ const Contact = () => {
                 Don't let another day pass with a website that doesn't convert. Let's build something amazing together.
               </p>
               <a 
-                href="https://wa.me/message/62PWVK7X73BMD1"
+                href="https://wa.me/2348027151618"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary inline-flex items-center gap-2"
