@@ -31,8 +31,8 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img src={heroBackground} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-background/70" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-transparent to-background" />
+        <div className="absolute inset-0 bg-background/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background" />
       </div>
       
       {/* Animated overlay effects */}

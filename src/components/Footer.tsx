@@ -23,7 +23,7 @@ const Footer = () => {
           {/* Social Links */}
           <div className="flex items-center gap-4">
             <a
-              href="https://wa.me/message/62PWVK7X73BMD1"
+              href="https://wa.me/2348027151618"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-secondary border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-green-500/50 transition-colors"
