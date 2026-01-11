@@ -26,8 +26,8 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>About Nova Sync | Bosede Precious Olorunda - My Story</title>
-        <meta name="description" content="Learn about Bosede Precious Olorunda, the founder of Nova Sync. 5+ years of experience building high-converting websites and digital experiences." />
+        <title>About Nova Sync | Precious Olorunda - My Story</title>
+        <meta name="description" content="Learn about Precious Olorunda, the founder of Nova Sync. 5+ years of experience building high-converting websites and digital experiences." />
       </Helmet>
       
       <Navbar />
@@ -53,7 +53,7 @@ const About = () => {
                   <div className="relative rounded-[2rem] overflow-hidden border-2 border-accent/20">
                     <img
                       src={bosedePrecious}
-                      alt="Bosede Precious Olorunda - Nova Sync Founder"
+                      alt="Precious Olorunda - Nova Sync Founder"
                       className="w-full aspect-[3/4] object-cover object-top"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
@@ -89,7 +89,7 @@ const About = () => {
                 </span>
                 
                 <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-8">
-                  Hey, I'm <span className="text-accent">Bosede</span>
+                  Hey, I'm <span className="text-accent">Precious</span>
                 </h1>
                 
                 <div className="space-y-6 text-lg text-muted-foreground mb-10">
