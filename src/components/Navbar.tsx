@@ -45,7 +45,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-20">
             <motion.div whileHover={{ scale: 1.05 }}>
               <Link to="/" className="flex items-center gap-3 font-display text-2xl font-bold text-foreground">
-                <img src={logo} alt="Nova Sync Logo" className="w-8 h-8 object-contain" />
+                <img src={logo} alt="Nova Sync Logo" className="w-12 h-12 object-contain" />
                 Nova<span className="text-accent">Sync</span>
               </Link>
             </motion.div>
