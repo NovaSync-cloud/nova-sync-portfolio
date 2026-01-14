@@ -27,31 +27,48 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+    >
       {/* Background image */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroBackground})` }}
       />
+
       {/* Dark overlay for readability */}
       <div className="absolute inset-0 bg-background/80" />
+
       {/* Animated overlay effects */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-10 left-10 w-[600px] h-[600px] bg-accent/20 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-accent/15 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: "2s" }} />
+        <div
+          className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-accent/15 rounded-full blur-[100px] animate-pulse"
+          style={{ animationDelay: "2s" }}
+        />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-accent/10 to-transparent rounded-full blur-[80px]" />
       </div>
-      
+
       {/* Geometric patterns */}
-      <svg className="absolute inset-0 w-full h-full opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        className="absolute inset-0 w-full h-full opacity-[0.03]"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <defs>
           <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="currentColor" strokeWidth="1" className="text-foreground"/>
+            <path
+              d="M 60 0 L 0 0 0 60"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1"
+              className="text-foreground"
+            />
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#grid)" />
       </svg>
-      
+
       {/* Floating shapes */}
       <motion.div
         animate={{ y: [0, -30, 0], rotate: [0, 5, 0] }}
@@ -68,7 +85,7 @@ const HeroSection = () => {
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         className="absolute top-1/3 left-20 w-32 h-32 border border-border/30 rounded-full"
       />
-      
+
       <div className="container mx-auto px-6 relative z-10 pt-20">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -96,7 +113,7 @@ const HeroSection = () => {
               </motion.div>
             </AnimatePresence>
           </div>
-          
+
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -105,7 +122,7 @@ const HeroSection = () => {
           >
             Web Designer & Developer | Conversion Specialist
           </motion.span>
-          
+
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -116,17 +133,17 @@ const HeroSection = () => {
             <span className="text-accent block mt-2"> Convert Visitors</span>
             <span className="text-foreground">Into Customers</span>
           </motion.h1>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12"
           >
-            E-commerce development, sales funnels, CRM automation, and conversion-focused 
+            E-commerce development, sales funnels, CRM automation, and conversion-focused
             web design that transforms traffic into revenue.
           </motion.p>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -140,7 +157,7 @@ const HeroSection = () => {
               Work With Me
             </a>
           </motion.div>
-          
+
           {/* Brand tagline */}
           <motion.p
             initial={{ opacity: 0 }}
@@ -152,7 +169,7 @@ const HeroSection = () => {
           </motion.p>
         </motion.div>
       </div>
-      
+
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
