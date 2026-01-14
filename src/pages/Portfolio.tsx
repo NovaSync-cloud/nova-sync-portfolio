@@ -5,21 +5,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
-import luxeCommerce from "@/assets/projects/luxe-commerce.jpg";
-import holidayRevenue from "@/assets/projects/holiday-revenue.jpg";
-import maisonBoutique from "@/assets/projects/maison-boutique.jpg";
-import auraCartel from "@/assets/projects/aura-cartel.jpg";
-import freshRecovery from "@/assets/projects/fresh-recovery.jpg";
-import novaLuxury from "@/assets/projects/nova-luxury.jpg";
-import novaLuxeWeb from "@/assets/projects/nova-luxe-web.jpg";
-import anchorShine from "@/assets/projects/anchor-shine.jpg";
-import insurePeace from "@/assets/projects/insure-peace.jpg";
-import autoLeads from "@/assets/projects/auto-leads.jpg";
-import novasyncDealers from "@/assets/projects/novasync-dealers.jpg";
-import novaDealers from "@/assets/projects/nova-dealers.jpg";
-
-const categories = ["All", "E-Commerce", "Marketing", "Automotive", "Wellness", "Luxury", "Lead Gen"];
+import { projects, categories } from "@/data/projects";
 
 const stats = [
   { icon: Award, value: "50+", label: "Projects Delivered" },
@@ -28,131 +14,15 @@ const stats = [
   { icon: Globe, value: "15+", label: "Countries Served" },
 ];
 
-const projects = [
-  {
-    id: 1,
-    title: "Luxe Commerce Launch",
-    category: "E-Commerce",
-    description: "Premium e-commerce platform with stunning product showcases and seamless checkout flow. Generated $2.4M in first-year revenue.",
-    image: luxeCommerce,
-    tags: ["Shopify", "E-Commerce", "Branding"],
-    url: "https://luxe-commerce-launch.netlify.app",
-    featured: true,
-    stats: { conversion: "+340%", revenue: "$2.4M" }
-  },
-  {
-    id: 2,
-    title: "Holiday Revenue Rocket",
-    category: "Marketing",
-    description: "Seasonal marketing campaign that drove 340% increase in holiday sales with strategic email sequences.",
-    image: holidayRevenue,
-    tags: ["Campaign", "Sales Funnel", "Seasonal"],
-    url: "https://holidayrevenuerocket.netlify.app",
-    featured: true,
-    stats: { conversion: "+280%", revenue: "$890K" }
-  },
-  {
-    id: 3,
-    title: "Maison Boutique",
-    category: "E-Commerce",
-    description: "Luxury boutique e-commerce with elegant design and premium user experience for high-end fashion.",
-    image: maisonBoutique,
-    tags: ["Luxury", "E-Commerce", "Fashion"],
-    url: "https://maisonboutique.netlify.app",
-    featured: true,
-    stats: { conversion: "+210%", revenue: "$1.2M" }
-  },
-  {
-    id: 4,
-    title: "Aura Cartel Experience",
-    category: "Marketing",
-    description: "Immersive brand experience with conversion-focused landing pages and automated lead nurturing.",
-    image: auraCartel,
-    tags: ["Branding", "Landing Page", "Experience"],
-    url: "https://aura-cartel-experience.netlify.app",
-    featured: true,
-    stats: { conversion: "+185%", revenue: "$650K" }
-  },
-  {
-    id: 5,
-    title: "Fresh Recovery Wellness",
-    category: "Wellness",
-    description: "Health & wellness platform with booking integration and lead capture.",
-    image: freshRecovery,
-    tags: ["Wellness", "Booking", "Lead Gen"],
-    url: "https://frestrecoverywellness.netlify.app",
-  },
-  {
-    id: 6,
-    title: "NovaSync Luxury Digital",
-    category: "Luxury",
-    description: "Premium digital experience for luxury automotive brand.",
-    image: novaLuxury,
-    tags: ["Luxury", "Automotive", "Premium"],
-    url: "https://novasync-luxury-digital-opus.netlify.app",
-  },
-  {
-    id: 7,
-    title: "Nova Sync Luxe Web",
-    category: "Luxury",
-    description: "Elegant web presence for premium luxury brand.",
-    image: novaLuxeWeb,
-    tags: ["Luxury", "Web Design", "Branding"],
-    url: "https://nova-sync-luxe-web.netlify.app",
-  },
-  {
-    id: 8,
-    title: "Anchor & Shine",
-    category: "Marketing",
-    description: "Brand identity and digital marketing campaign with lead generation.",
-    image: anchorShine,
-    tags: ["Branding", "Marketing", "Campaign"],
-    url: "https://anchor-and-shine.netlify.app",
-  },
-  {
-    id: 9,
-    title: "Insure Peace Now",
-    category: "Lead Gen",
-    description: "Insurance lead generation platform with high-converting forms.",
-    image: insurePeace,
-    tags: ["Insurance", "Lead Gen", "Forms"],
-    url: "https://insure-peace-now.netlify.app",
-  },
-  {
-    id: 10,
-    title: "Auto Leads Accelerator",
-    category: "Automotive",
-    description: "Automotive lead generation funnel with CRM integration.",
-    image: autoLeads,
-    tags: ["Automotive", "Lead Gen", "CRM"],
-    url: "https://autoleadsaccelerator.netlify.app",
-  },
-  {
-    id: 11,
-    title: "NovaSync Dealers",
-    category: "Automotive",
-    description: "Automotive dealership digital platform with inventory management.",
-    image: novasyncDealers,
-    tags: ["Automotive", "Dealership", "Platform"],
-    url: "https://novasyncdealers.netlify.app",
-  },
-  {
-    id: 12,
-    title: "Nova Dealers",
-    category: "Automotive",
-    description: "Premium auto sales platform with modern design.",
-    image: novaDealers,
-    tags: ["Automotive", "Sales", "Platform"],
-    url: "https://novadealers.netlify.app",
-  },
-];
-
 const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   
   const filteredProjects = activeCategory === "All" 
     ? projects 
     : projects.filter(p => p.category === activeCategory);
+
+  const featuredProjects = filteredProjects.filter(p => p.featured);
+  const regularProjects = filteredProjects.filter(p => !p.featured);
 
   return (
     <>
@@ -217,7 +87,7 @@ const Portfolio = () => {
         {/* Filter */}
         <section className="py-8 bg-card border-y border-border sticky top-20 z-40">
           <div className="container mx-auto px-6">
-            <div className="flex items-center justify-center gap-4 flex-wrap">
+            <div className="flex items-center justify-center gap-3 flex-wrap">
               <Filter className="w-5 h-5 text-muted-foreground" />
               {categories.map((category) => (
                 <button
@@ -237,77 +107,84 @@ const Portfolio = () => {
         </section>
         
         {/* Featured Projects */}
-        <section className="py-24 bg-background">
-          <div className="container mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
-            >
-              <h2 className="font-display text-3xl font-bold text-foreground">
-                Featured <span className="text-accent">Projects</span>
-              </h2>
-            </motion.div>
-            
-            <div className="grid lg:grid-cols-2 gap-8 mb-16">
-              {filteredProjects.filter(p => p.featured).map((project, index) => (
-                <motion.a
-                  key={project.id}
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="group block"
-                >
-                  <div className="relative overflow-hidden rounded-3xl bg-card border border-border hover:border-accent/50 transition-all duration-500 hover:shadow-2xl hover:shadow-accent/10">
-                    <div className="aspect-[16/10] overflow-hidden">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
-                    </div>
-                    
-                    {/* Stats Badge */}
-                    {project.stats && (
-                      <div className="absolute top-4 right-4 flex gap-2">
-                        <span className="px-3 py-1.5 bg-accent/90 text-accent-foreground text-xs font-bold rounded-full backdrop-blur-sm">
-                          {project.stats.conversion}
-                        </span>
-                        <span className="px-3 py-1.5 bg-foreground/90 text-background text-xs font-bold rounded-full backdrop-blur-sm">
-                          {project.stats.revenue}
-                        </span>
-                      </div>
-                    )}
-                    
-                    <div className="absolute bottom-0 left-0 right-0 p-8">
-                      <span className="inline-block px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full mb-4">
-                        {project.category}
-                      </span>
-                      <h3 className="font-display text-2xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors flex items-center gap-3">
-                        {project.title}
-                        <ExternalLink className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      </h3>
-                      <p className="text-muted-foreground mb-4">{project.description}</p>
-                      <div className="flex flex-wrap gap-2">
-                        {project.tags.map((tag) => (
-                          <span key={tag} className="text-xs text-muted-foreground bg-muted/50 px-3 py-1 rounded-full">
-                            {tag}
+        {featuredProjects.length > 0 && (
+          <section className="py-24 bg-background">
+            <div className="container mx-auto px-6">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="mb-12"
+              >
+                <h2 className="font-display text-3xl font-bold text-foreground">
+                  Featured <span className="text-accent">Projects</span>
+                </h2>
+              </motion.div>
+              
+              <div className="grid lg:grid-cols-2 gap-8 mb-16">
+                {featuredProjects.map((project, index) => (
+                  <motion.div
+                    key={project.id}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <Link
+                      to={`/project/${project.id}`}
+                      className="group block"
+                    >
+                      <div className="relative overflow-hidden rounded-3xl bg-card border border-border hover:border-accent/50 transition-all duration-500 hover:shadow-2xl hover:shadow-accent/10">
+                        <div className="aspect-[16/10] overflow-hidden">
+                          <img
+                            src={project.image}
+                            alt={project.title}
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+                        </div>
+                        
+                        <div className="absolute bottom-0 left-0 right-0 p-8">
+                          <span className="inline-block px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full mb-4">
+                            {project.category}
                           </span>
-                        ))}
+                          <h3 className="font-display text-2xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors flex items-center gap-3">
+                            {project.title}
+                            <ExternalLink className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                          </h3>
+                          <p className="text-muted-foreground mb-4">{project.description}</p>
+                          <div className="flex flex-wrap gap-2">
+                            {project.tags.map((tag) => (
+                              <span key={tag} className="text-xs text-muted-foreground bg-muted/50 px-3 py-1 rounded-full">
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
                       </div>
+                    </Link>
+                    
+                    {/* External link */}
+                    <div className="mt-3 flex justify-end">
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-accent transition-colors"
+                      >
+                        Visit Live Site <ExternalLink className="w-3 h-3" />
+                      </a>
                     </div>
-                  </div>
-                </motion.a>
-              ))}
+                  </motion.div>
+                ))}
+              </div>
             </div>
-            
-            {/* All Projects Grid */}
+          </section>
+        )}
+        
+        {/* All Projects Grid */}
+        <section className="py-24 bg-card">
+          <div className="container mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -317,49 +194,67 @@ const Portfolio = () => {
               <h2 className="font-display text-3xl font-bold text-foreground">
                 All <span className="text-accent">Projects</span>
               </h2>
+              <p className="text-muted-foreground mt-2">
+                {filteredProjects.length} project{filteredProjects.length !== 1 ? 's' : ''} found
+              </p>
             </motion.div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredProjects.filter(p => !p.featured).map((project, index) => (
-                <motion.a
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {regularProjects.map((project, index) => (
+                <motion.div
                   key={project.id}
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="group block"
+                  layout
                 >
-                  <div className="relative overflow-hidden rounded-2xl bg-card border border-border hover:border-accent/50 transition-all duration-300">
-                    <div className="aspect-[4/3] overflow-hidden">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
+                  <Link
+                    to={`/project/${project.id}`}
+                    className="group block"
+                  >
+                    <div className="relative overflow-hidden rounded-2xl bg-background border border-border hover:border-accent/50 transition-all duration-300">
+                      <div className="aspect-[4/3] overflow-hidden">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
+                      </div>
+                      
+                      <div className="absolute bottom-0 left-0 right-0 p-5">
+                        <span className="inline-block px-2 py-0.5 bg-accent/20 text-accent text-xs font-medium rounded-full mb-2">
+                          {project.category}
+                        </span>
+                        <h3 className="font-display text-lg font-bold text-foreground group-hover:text-accent transition-colors flex items-center gap-2">
+                          {project.title}
+                          <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </h3>
+                        <p className="text-muted-foreground text-xs mt-1 line-clamp-2">{project.description}</p>
+                      </div>
                     </div>
-                    
-                    <div className="absolute bottom-0 left-0 right-0 p-5">
-                      <span className="inline-block px-2 py-0.5 bg-accent/20 text-accent text-xs font-medium rounded-full mb-2">
-                        {project.category}
-                      </span>
-                      <h3 className="font-display text-lg font-bold text-foreground group-hover:text-accent transition-colors flex items-center gap-2">
-                        {project.title}
-                        <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      </h3>
-                    </div>
+                  </Link>
+                  
+                  {/* External link */}
+                  <div className="mt-2 flex justify-end">
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-accent transition-colors"
+                    >
+                      Visit <ExternalLink className="w-3 h-3" />
+                    </a>
                   </div>
-                </motion.a>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
         
         {/* Video Showcase CTA */}
-        <section className="py-24 bg-card relative overflow-hidden">
+        <section className="py-24 bg-background relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent" />
           
           <div className="container mx-auto px-6 relative z-10">
@@ -384,9 +279,9 @@ const Portfolio = () => {
             </motion.div>
           </div>
         </section>
-        
-        <Footer />
       </main>
+      
+      <Footer />
     </>
   );
 };
