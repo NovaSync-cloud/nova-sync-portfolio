@@ -1,3 +1,23 @@
+import luxeCommerceScreenshot from "@/assets/projects/luxe-commerce-screenshot.jpg";
+import maisonBoutiqueScreenshot from "@/assets/projects/maison-boutique-screenshot.jpg";
+import launchCatalystScreenshot from "@/assets/projects/launch-catalyst-screenshot.jpg";
+import anchorShineScreenshot from "@/assets/projects/anchor-shine-screenshot.jpg";
+import insurePeaceScreenshot from "@/assets/projects/insure-peace-screenshot.jpg";
+import noirBloomScreenshot from "@/assets/projects/noir-bloom-screenshot.jpg";
+import buddyPetCareScreenshot from "@/assets/projects/buddy-pet-care-screenshot.jpg";
+import heritageStitchScreenshot from "@/assets/projects/heritage-stitch-screenshot.jpg";
+import dealerConnectScreenshot from "@/assets/projects/dealer-connect-screenshot.jpg";
+import driveMoreScreenshot from "@/assets/projects/drive-more-screenshot.jpg";
+import nexusWatchScreenshot from "@/assets/projects/nexus-watch-screenshot.jpg";
+import luxeCarsScreenshot from "@/assets/projects/luxe-cars-screenshot.jpg";
+import niorFlashScreenshot from "@/assets/projects/nior-flash-screenshot.jpg";
+import vitalityRecoveryScreenshot from "@/assets/projects/vitality-recovery-screenshot.jpg";
+import velourStudioScreenshot from "@/assets/projects/velour-studio-screenshot.jpg";
+import unparallelLuxuryScreenshot from "@/assets/projects/unparallel-luxury-screenshot.jpg";
+import auraCartelScreenshot from "@/assets/projects/aura-cartel-screenshot.jpg";
+import etherealDynamicsScreenshot from "@/assets/projects/ethereal-dynamics-screenshot.jpg";
+import primeRealtyScreenshot from "@/assets/projects/prime-realty-screenshot.jpg";
+
 export interface Project {
   id: string;
   title: string;
@@ -34,7 +54,7 @@ export const projects: Project[] = [
     title: "Luxe Commerce Launch",
     category: "E-Commerce",
     description: "Premium e-commerce launch experience with high-converting landing pages",
-    image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&h=600&fit=crop",
+    image: luxeCommerceScreenshot,
     tags: ["E-Commerce", "Launch", "Luxury"],
     url: "https://luxe-commerce-launch.netlify.app",
     featured: true,
@@ -45,7 +65,7 @@ export const projects: Project[] = [
     title: "Maison Boutique",
     category: "E-Commerce",
     description: "Luxury boutique brand identity and digital presence",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
+    image: maisonBoutiqueScreenshot,
     tags: ["Fashion", "Luxury", "E-Commerce"],
     url: "https://maisonboutique.netlify.app",
     featured: true,
@@ -56,7 +76,7 @@ export const projects: Project[] = [
     title: "Launch Catalyst Video",
     category: "Video",
     description: "Video production and launch campaign for maximum impact",
-    image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&h=600&fit=crop",
+    image: launchCatalystScreenshot,
     tags: ["Video", "Launch", "Campaign"],
     url: "https://launch-catalyst-video.netlify.app",
     featured: true,
@@ -67,7 +87,7 @@ export const projects: Project[] = [
     title: "Anchor & Shine",
     category: "Branding",
     description: "Premium brand identity and web design for lifestyle brands",
-    image: "https://images.unsplash.com/photo-1607083206968-13611e3d76db?w=800&h=600&fit=crop",
+    image: anchorShineScreenshot,
     tags: ["Branding", "Identity", "Web Design"],
     url: "https://anchor-and-shine.netlify.app",
     featured: true,
@@ -78,7 +98,7 @@ export const projects: Project[] = [
     title: "Insure Peace Now",
     category: "Insurance",
     description: "Insurance lead generation platform with optimized conversions",
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=600&fit=crop",
+    image: insurePeaceScreenshot,
     tags: ["Insurance", "Lead Gen", "Conversion"],
     url: "https://insure-peace-now.netlify.app",
     featured: true,
@@ -89,7 +109,7 @@ export const projects: Project[] = [
     title: "Noir & Bloom",
     category: "Lifestyle",
     description: "Elegant floral and lifestyle brand with sophisticated aesthetics",
-    image: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&h=600&fit=crop",
+    image: noirBloomScreenshot,
     tags: ["Lifestyle", "E-Commerce", "Branding"],
     url: "https://noir-and-bloom.netlify.app",
     featured: true,
@@ -102,7 +122,7 @@ export const projects: Project[] = [
     title: "My Buddy Pet Care",
     category: "Pet Care",
     description: "Pet care services and brand identity with playful design",
-    image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&h=600&fit=crop",
+    image: buddyPetCareScreenshot,
     tags: ["Pet Care", "Services", "Branding"],
     url: "https://my-buddy-pet-care.netlify.app",
     tier: 'more',
@@ -112,7 +132,7 @@ export const projects: Project[] = [
     title: "Heritage Stitch",
     category: "Fashion",
     description: "Artisanal fashion brand storytelling with heritage focus",
-    image: "https://images.unsplash.com/photo-1558171813-4c088753af8f?w=800&h=600&fit=crop",
+    image: heritageStitchScreenshot,
     tags: ["Fashion", "Artisanal", "Heritage"],
     url: "https://heritage-stitch.netlify.app",
     tier: 'more',
@@ -122,7 +142,7 @@ export const projects: Project[] = [
     title: "Dealer Connect",
     category: "Automotive",
     description: "Automotive dealership digital platform for lead generation",
-    image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&h=600&fit=crop",
+    image: dealerConnectScreenshot,
     tags: ["Automotive", "Lead Gen", "Digital"],
     url: "https://dealer-connect.netlify.app",
     tier: 'more',
@@ -132,7 +152,7 @@ export const projects: Project[] = [
     title: "Drive More",
     category: "Automotive",
     description: "Automotive lead generation and sales optimization platform",
-    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&h=600&fit=crop",
+    image: driveMoreScreenshot,
     tags: ["Automotive", "Sales", "Optimization"],
     url: "https://drive-more.netlify.app",
     tier: 'more',
@@ -142,7 +162,7 @@ export const projects: Project[] = [
     title: "The Nexus Watch",
     category: "Luxury",
     description: "Luxury timepiece brand experience with premium aesthetics",
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&h=600&fit=crop",
+    image: nexusWatchScreenshot,
     tags: ["Luxury", "Timepiece", "Premium"],
     url: "https://the-nexus-watch.netlify.app",
     tier: 'more',
@@ -152,7 +172,7 @@ export const projects: Project[] = [
     title: "The Luxe Cars",
     category: "Automotive",
     description: "Premium automotive dealership presence with luxury focus",
-    image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&h=600&fit=crop",
+    image: luxeCarsScreenshot,
     tags: ["Automotive", "Luxury", "Dealership"],
     url: "https://the-luxe-cars.netlify.app",
     tier: 'more',
@@ -162,7 +182,7 @@ export const projects: Project[] = [
     title: "Nior Flash Sales",
     category: "E-Commerce",
     description: "High-converting flash sale landing pages with urgency design",
-    image: "https://images.unsplash.com/photo-1607083206968-13611e3d76db?w=800&h=600&fit=crop",
+    image: niorFlashScreenshot,
     tags: ["E-Commerce", "Flash Sales", "Conversion"],
     url: "https://nior-flash-sales.netlify.app",
     tier: 'more',
@@ -172,7 +192,7 @@ export const projects: Project[] = [
     title: "Vitality Recovery",
     category: "Wellness",
     description: "Health & wellness brand identity with calming aesthetics",
-    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop",
+    image: vitalityRecoveryScreenshot,
     tags: ["Wellness", "Health", "Recovery"],
     url: "https://vitality-recovery.netlify.app",
     tier: 'more',
@@ -184,7 +204,7 @@ export const projects: Project[] = [
     title: "Velour Studio",
     category: "Creative",
     description: "Creative studio brand and portfolio showcase",
-    image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=600&fit=crop",
+    image: velourStudioScreenshot,
     tags: ["Creative", "Studio", "Portfolio"],
     url: "https://velour-studio.netlify.app",
     tier: 'extended',
@@ -194,7 +214,7 @@ export const projects: Project[] = [
     title: "Unparallel Luxury",
     category: "Luxury",
     description: "Luxury automotive digital experience with premium feel",
-    image: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800&h=600&fit=crop",
+    image: unparallelLuxuryScreenshot,
     tags: ["Luxury", "Automotive", "Premium"],
     url: "https://unparallel-luxury.netlify.app",
     tier: 'extended',
@@ -204,7 +224,7 @@ export const projects: Project[] = [
     title: "Aura Cartel",
     category: "Lifestyle",
     description: "Premium lifestyle brand identity with bold aesthetics",
-    image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=800&h=600&fit=crop",
+    image: auraCartelScreenshot,
     tags: ["Lifestyle", "Brand", "Premium"],
     url: "https://aura-cartel.netlify.app",
     tier: 'extended',
@@ -214,7 +234,7 @@ export const projects: Project[] = [
     title: "Ethereal Dynamics",
     category: "Tech",
     description: "Modern tech brand experience with futuristic design",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop",
+    image: etherealDynamicsScreenshot,
     tags: ["Tech", "Modern", "Futuristic"],
     url: "https://ethereal-dynamics.netlify.app",
     tier: 'extended',
@@ -224,7 +244,7 @@ export const projects: Project[] = [
     title: "Prime Realty",
     category: "Real Estate",
     description: "Real estate brand and property showcase platform",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop",
+    image: primeRealtyScreenshot,
     tags: ["Real Estate", "Property", "Showcase"],
     url: "https://prime-realty.netlify.app",
     tier: 'extended',
