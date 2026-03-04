@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { ArrowLeft, Clock, User, Tag, Calendar, Share2, Bookmark, MessageCircle } from "lucide-react";
 import { Link, useParams, useNavigate } from "react-router-dom";
+import DOMPurify from "dompurify";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { getBlogPostById, blogPosts } from "@/data/blog";
@@ -266,7 +267,7 @@ const BlogPost = () => {
 
 // Helper function to format markdown-like content to HTML
 function formatContent(content: string): string {
-  return content
+  const rawHtml = content
     .split('\n')
     .map(line => {
       // Headers
@@ -304,6 +305,11 @@ function formatContent(content: string): string {
       return line;
     })
     .join('\n');
+
+  return DOMPurify.sanitize(rawHtml, {
+    ALLOWED_TAGS: ['h1', 'h2', 'h3', 'p', 'strong', 'li', 'ul', 'ol', 'blockquote', 'code', 'a'],
+    ALLOWED_ATTR: ['href', 'target', 'rel']
+  });
 }
 
 export default BlogPost;
