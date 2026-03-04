@@ -267,7 +267,7 @@ const BlogPost = () => {
 
 // Helper function to format markdown-like content to HTML
 function formatContent(content: string): string {
-  return content
+  const rawHtml = content
     .split('\n')
     .map(line => {
       // Headers
@@ -305,6 +305,11 @@ function formatContent(content: string): string {
       return line;
     })
     .join('\n');
+
+  return DOMPurify.sanitize(rawHtml, {
+    ALLOWED_TAGS: ['h1', 'h2', 'h3', 'p', 'strong', 'li', 'ul', 'ol', 'blockquote', 'code', 'a'],
+    ALLOWED_ATTR: ['href', 'target', 'rel']
+  });
 }
 
 export default BlogPost;
