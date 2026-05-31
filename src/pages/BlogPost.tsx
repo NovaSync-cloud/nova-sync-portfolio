@@ -307,8 +307,11 @@ function formatContent(content: string): string {
     .join('\n');
 
   return DOMPurify.sanitize(rawHtml, {
-    ALLOWED_TAGS: ['h1', 'h2', 'h3', 'p', 'strong', 'li', 'ul', 'ol', 'blockquote', 'code', 'a'],
-    ALLOWED_ATTR: ['href', 'target', 'rel']
+    ALLOWED_TAGS: ['h1', 'h2', 'h3', 'p', 'strong', 'em', 'li', 'ul', 'ol', 'blockquote', 'code'],
+    ALLOWED_ATTR: [],
+    FORBID_TAGS: ['script', 'iframe', 'object', 'embed', 'style', 'a'],
+    FORBID_ATTR: ['href', 'src', 'onerror', 'onload', 'onclick', 'style'],
+    ALLOW_DATA_ATTR: false,
   });
 }
 
